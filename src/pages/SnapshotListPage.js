@@ -2,7 +2,7 @@
 import React,  {useState, useEffect}from 'react'
 import SnapshotItem from '../components/SnapshotItem'
 
-const SnapshotsPage = () => {
+const SnapshotListPage = () => {
 
     let [snapshots, setSnapshots] = useState([]);
     
@@ -11,9 +11,8 @@ const SnapshotsPage = () => {
     }, [])
 
     let getSnapshots = async () => {
-        let response = await fetch('http://127.0.0.1:8000/snapshots/api/v1/snapshots');
+        let response = await fetch('/snapshots/api/v1/snapshots');
         let data = await response.json();
-        console.log("Data: ", data);
         setSnapshots(data);
     }
 
@@ -28,4 +27,4 @@ const SnapshotsPage = () => {
   )
 }
 
-export default SnapshotsPage
+export default SnapshotListPage

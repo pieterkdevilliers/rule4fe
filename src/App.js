@@ -1,14 +1,37 @@
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from 'react-router-dom';
 
 import './App.css';
 import Header from './components/Header';
-import SnapshotsPage from './pages/SnapshotsPage';
+import SnapshotListPage from './pages/SnapshotListPage';
+import AOLListPage from './pages/AOLListPage';
+import AOLPage from './pages/AOLPage';
+import SnapshotPage from './pages/SnapshotPage';
+import TodayPage from './pages/TodayPage';
+import AOLForm from './components/AOLForm';
+import RegistrationPage from './pages/RegistrationPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <Header />
-      <SnapshotsPage />
-    </div>
+        <Routes>
+          <Route path="/aols" exact element={<AOLListPage />} />
+          <Route path="/aols/:id" exact element={<AOLPage />} />
+          <Route path="/snapshots" exact element={<SnapshotListPage />} />
+          <Route path="/snapshots/:id" exact element={<SnapshotPage />} />
+          <Route path="/today/:id" exact element={<TodayPage />} />
+          <Route path="/aols/add" exact element={<AOLForm />} />
+          <Route path="/snapshots/register" exact element={<RegistrationPage />} />
+          <Route path="/snapshots/login" exact element={<LoginPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

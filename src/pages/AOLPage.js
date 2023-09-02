@@ -1,31 +1,31 @@
-
-import React,  {useState, useEffect}from 'react'
-import AOLItem from '../components/AOLItem'
+import React, {useState, useEffect} from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom';
 
 const AOLPage = () => {
 
-    let [aols, setAOL] = useState([]);
-    
-    useEffect(() => {
-        getSnapshots();
-    }, [])
+    const { id } = useParams();
+    const navigate = useNavigate();
+    let aolId = id;
 
-    let getAOLs = async () => {
-        let response = await fetch('http://127.0.0.1:8000/snapshots/api/v1/aols');
+    let [aol, setAol] = useState(null);
+
+    useEffect(() => {
+        getAol();
+    }, [aolId])
+
+    let getAol = async () => {
+        let response = await fetch(`/snapshots/api/v1/aols/${aolId}`)
         let data = await response.json();
-        console.log("Data: ", data);
-        setSnapshots(data);
+        setAol(data);
     }
 
   return (
     <div>
-      <div className="aols">
-        {aols.map((aol, index) => (
-            <AOLItem key={index} aol={aol} />
-        ))}
-      </div>
+      <h3> {aol?.name} </h3>
+      <p> {aol?.description} </p>
     </div>
   )
 }
 
-export default SnapshotsPage
+export default AOLPage
+
