@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 const AOLForm = ({ onAddAOL }) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [owner, setOwner] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newAOL = { name, description };
+    const newAOL = { name, description, owner };
 
     try {
       const response = await fetch('/snapshots/api/v1/aols', {
@@ -41,6 +42,11 @@ const AOLForm = ({ onAddAOL }) => {
       <label>
         Description:
         <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+      </label>
+      <br />
+      <label>
+        Owner:
+        <textarea value={owner} onChange={(e) => setOwner(e.target.value)} />
       </label>
       <br />
       <button type="submit">Create AOL</button>

@@ -12,6 +12,8 @@ import AOLPage from './pages/AOLPage';
 import SnapshotPage from './pages/SnapshotPage';
 import TodayPage from './pages/TodayPage';
 import AOLForm from './components/AOLForm';
+import RegistrationPage from './pages/RegistrationPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/snapshots/:id" exact element={<SnapshotPage />} />
           <Route path="/today/:id" exact element={<TodayPage />} />
           <Route path="/aols/add" exact element={<AOLForm />} />
+          <Route path="/snapshots/register" exact element={<RegistrationPage />} />
+          <Route path="/snapshots/login" exact element={<LoginPage />} />
         </Routes>
       </div>
     </Router>
