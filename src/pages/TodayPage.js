@@ -17,13 +17,23 @@ const TodayPage = () => {
     }, [todayId])
 
     let getToday = async () => {
-        let response = await fetch(`/snapshots/api/v1/today/${todayId}`)
+      const token = localStorage.getItem('token');
+        let response = await fetch(`/snapshots/api/v1/today/${todayId}`, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`, // Include the token in the header
+          },})
         let data = await response.json();
         setToday(data);
     }
 
     let getAol = async () => {
-      let response = await fetch(`/snapshots/api/v1/aols/${todayId}`)
+      const token = localStorage.getItem('token');
+      let response = await fetch(`/snapshots/api/v1/aols/${todayId}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`, // Include the token in the header
+        },})
       let data = await response.json();
       setTodayAOL(data);
   }

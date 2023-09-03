@@ -12,7 +12,13 @@ const AOLListPage = () => {
   }, []);
 
   let getAOLs = async () => {
-    let response = await fetch('/snapshots/api/v1/aols');
+    const token = localStorage.getItem('token');
+    let response = await fetch('/snapshots/api/v1/aols', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`, // Include the token in the header
+      },});
+
     let data = await response.json();
     setAOLs(data);
   };

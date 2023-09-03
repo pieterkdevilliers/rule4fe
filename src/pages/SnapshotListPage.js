@@ -11,7 +11,12 @@ const SnapshotListPage = () => {
     }, [])
 
     let getSnapshots = async () => {
-        let response = await fetch('/snapshots/api/v1/snapshots');
+      const token = localStorage.getItem('token');
+        let response = await fetch('/snapshots/api/v1/snapshots', {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`, // Include the token in the header
+          },});
         let data = await response.json();
         setSnapshots(data);
     }
