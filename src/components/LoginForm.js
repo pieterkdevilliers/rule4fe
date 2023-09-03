@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: '',
         password: '',
@@ -14,7 +16,8 @@ const Login = () => {
     };
 
     const handleLogin = () => {
-        fetch('/snapshots/api/v1/login/', {
+        // Step 1: Login Request
+        fetch('/snapshots/api/v1/token/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -23,13 +26,33 @@ const Login = () => {
         })
         .then((response) => {
             if (response.ok) {
-                return response.json();
+                // Step 2: Token Request
+                return fetch('/snapshots/api/v1/token/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData), // Include user credentials again
+                });
             }
             throw new Error('Login failed');
         })
+        .then((tokenResponse) => {
+            if (tokenResponse.ok) {
+                return tokenResponse.json();
+            }
+            throw new Error('Token request failed');
+        })
         .then((data) => {
+            const token = data.access;
+    
+            // Store the JWT token in localStorage
+            localStorage.setItem('token', token);
+            console.log(token);
+    
             console.log(data.message);
             // Handle success, e.g., redirect to user dashboard
+            navigate('/aols');
         })
         .catch((error) => {
             console.error(error.message);
