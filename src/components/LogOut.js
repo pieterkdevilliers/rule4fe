@@ -5,7 +5,6 @@ const Logout = () => {
     const navigate = useNavigate();
     const handleLogout = () => {
         localStorage.removeItem('token');
-        console.log('token removed');
         navigate('/snapshots/login');
     };
 

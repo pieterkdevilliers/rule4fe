@@ -48,9 +48,7 @@ const Login = () => {
     
             // Store the JWT token in localStorage
             localStorage.setItem('token', token);
-            console.log(token);
     
-            console.log(data.message);
             // Handle success, e.g., redirect to user dashboard
             navigate('/aols');
         })

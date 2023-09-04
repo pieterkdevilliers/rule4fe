@@ -1,7 +1,6 @@
 import AOLForm from "../components/AOLForm"
 
 const handleAddAOL = (newAOL) => {
-  console.log('handleAddAOL called with:', newAOL);
   // Perform some action with newAOL data
 };
 

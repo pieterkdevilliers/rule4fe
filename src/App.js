@@ -30,7 +30,8 @@ function App() {
           <Route path="/aols/add" exact element={<AddAOLPage />} />
           <Route path="/snapshots/register" exact element={<RegistrationPage />} />
           <Route path="/snapshots/login" exact element={<LoginPage />} />
-          <Route path="/snapshots/add" exact element={<AddSnapshotPage />} />
+          <Route path="/snapshots/add/:todayId" exact element={<AddSnapshotPage />} />
+
         </Routes>
       </div>
     </Router>
