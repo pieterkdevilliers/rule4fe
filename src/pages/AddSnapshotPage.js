@@ -1,4 +1,4 @@
-
+import SnapshotForm from "../components/SnapshotForm";
 
 const handleAddSnapshot = (newSnapshot) => {
   console.log('handleAddSnapshot called with:', newSnapshot);
@@ -13,7 +13,7 @@ const AddSnapshotPage = () => {
   return (
     <div>
       <h3> Add New Snapshot </h3>
-      {/* <SnapshotForm onAddAOL={handleAddAOL}/> */}
+      <SnapshotForm onAddSnapshot={handleAddSnapshot}/>
     </div>
   )
 }

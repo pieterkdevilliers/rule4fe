@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import SnapshotItem from '../components/SnapshotItem'
+import AddSnapshotButton from '../components/AddSnapshotButton'
 
 const TodayPage = () => {
 
@@ -50,6 +51,7 @@ const TodayPage = () => {
           <SnapshotItem key={index} snapshot={snapshot} />
       ))}
     </div>
+    <AddSnapshotButton />
     </div>
   )
 }
