@@ -9,7 +9,6 @@ const LoginButton = () => {
 
     return (
         <div>
-            <h2>Login</h2>
             <button onClick={handleLogInButton}>Login</button>
         </div>
     );

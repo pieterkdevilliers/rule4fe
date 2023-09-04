@@ -1,5 +1,4 @@
 import LoginFrom from '../components/LoginForm'
-import LogOut from '../components/LogOut'
 
 const LoginPage = () => {
 

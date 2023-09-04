@@ -22,15 +22,16 @@ function App() {
       <div className="App">
       <Header />
         <Routes>
+          <Route path="/snapshots/register" exact element={<RegistrationPage />} />
+          <Route path="/snapshots/login" exact element={<LoginPage />} />
           <Route path="/aols" exact element={<AOLListPage />} />
           <Route path="/aols/:id" exact element={<AOLPage />} />
           <Route path="/snapshots" exact element={<SnapshotListPage />} />
           <Route path="/snapshots/:id" exact element={<SnapshotPage />} />
           <Route path="/today/:id" exact element={<TodayPage />} />
           <Route path="/aols/add" exact element={<AddAOLPage />} />
-          <Route path="/snapshots/register" exact element={<RegistrationPage />} />
-          <Route path="/snapshots/login" exact element={<LoginPage />} />
           <Route path="/snapshots/add/:todayId" exact element={<AddSnapshotPage />} />
+
 
         </Routes>
       </div>
