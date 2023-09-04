@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import SnapshotItem from '../components/SnapshotItem'
 
 const TodayPage = () => {
 
   const { id } = useParams();
-  const navigate = useNavigate();
   let todayId = id;
 
   let [snapshot, setToday] = useState(null);
