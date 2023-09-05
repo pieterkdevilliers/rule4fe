@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AOLForm = ({ onAddAOL }) => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [owner, setOwner] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const newAOL = { name, description, owner };
+    const token = localStorage.getItem('token');
+    const newAOL = { name, description };
 
     try {
       const response = await fetch('/snapshots/api/v1/aols', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify(newAOL),
       });
@@ -24,6 +26,7 @@ const AOLForm = ({ onAddAOL }) => {
         onAddAOL(data); // Update the state with the new AOL data
         setName('');
         setDescription('');
+        navigate('/aols');
       } else {
         console.error('Failed to create AOL');
       }
@@ -42,11 +45,6 @@ const AOLForm = ({ onAddAOL }) => {
       <label>
         Description:
         <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Owner:
-        <textarea value={owner} onChange={(e) => setOwner(e.target.value)} />
       </label>
       <br />
       <button type="submit">Create AOL</button>

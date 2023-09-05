@@ -1,11 +1,22 @@
-import React from 'react'
+import React from 'react';
+import LoginButton from './LogIn';
+import Logout from './LogOut';
+import AOLButton from './AOLButton';
 
 const header = () => {
   return (
-    <div>
-      <h1>Rule4 Header</h1>
-    </div>
-  )
-}
+      <div className="button-container">
+        <div>
+          <LoginButton />
+        </div>
+        <div>
+          <Logout />
+        </div>
+        <div>
+          <AOLButton />
+        </div>
+      </div>
+  );
+};
 
-export default header
+export default header;

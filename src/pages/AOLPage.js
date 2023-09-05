@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const AOLPage = () => {
 
     const { id } = useParams();
-    const navigate = useNavigate();
     let aolId = id;
 
     let [aol, setAol] = useState(null);

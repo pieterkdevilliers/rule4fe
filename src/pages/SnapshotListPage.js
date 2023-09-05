@@ -1,6 +1,7 @@
 
 import React,  {useState, useEffect}from 'react'
 import SnapshotItem from '../components/SnapshotItem'
+import AddSnapshotButton from '../components/AddSnapshotButton'
 
 const SnapshotListPage = () => {
 
@@ -28,6 +29,7 @@ const SnapshotListPage = () => {
             <SnapshotItem key={index} snapshot={snapshot} />
         ))}
       </div>
+      <AddSnapshotButton />
     </div>
   )
 }

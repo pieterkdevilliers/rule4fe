@@ -34,7 +34,6 @@ const Registration = () => {
             throw new Error('Registration failed');
         })
         .then((data) => {
-            console.log(data.message);
             // Handle success, e.g., redirect to login page
             // Redirect to the login page after successful registration
             navigate('/login'); // Use history.push to navigate to the login page
