@@ -57,7 +57,7 @@ const TodayPage = () => {
         )}
       </div>
       <h1>Related Snapshots:</h1>
-      <div className="snapshots">
+      <div>
         {snapshot ? (
           snapshot.length > 0 ? (
             snapshot.map((snapshot, index) => (

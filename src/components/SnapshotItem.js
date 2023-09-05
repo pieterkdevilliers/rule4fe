@@ -2,11 +2,11 @@ import React from 'react'
 
 const SnapshotItem = ({snapshot}) => {
   return (
-    <div>
+    <div className="snapshot">
       <div>
         <h4>{snapshot.created}</h4>
-      </div>
         <p>{snapshot.body}</p>
+        </div>
     </div>
   )
 }
