@@ -45,16 +45,25 @@ const TodayPage = () => {
 
   return (
     <div>
-      <div>
-        <h1>Selected AOL:</h1>
-        {aol ? (
-          <>
-            <h3>{aol.name}</h3>
-            <p>{aol.description}</p>
-          </>
-        ) : (
-          <p>No AOL selected.</p>
-        )}
+      <div className='today-aol-list-container'>
+        <div>
+          {aol ? (
+            <>
+            <div className='today-aol-item-container'>
+              <div>
+                <div>
+                <h3>{aol.name}</h3>
+                </div>
+                <div>
+                  <p>{aol.description}</p>
+                </div>
+              </div>
+            </div>
+            </>
+          ) : (
+            <p>No AOL selected.</p>
+          )}
+        </div>
       </div>
       <h1>Related Snapshots:</h1>
       <div>

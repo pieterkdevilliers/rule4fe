@@ -23,8 +23,8 @@ const SnapshotListPage = () => {
     }
 
   return (
-    <div>
-      <div className="snapshots">
+    <div className='snapshot-list-container'>
+      <div className="snapshot-item-container">
         {snapshots.map((snapshot, index) => (
             <SnapshotItem key={index} snapshot={snapshot} />
         ))}

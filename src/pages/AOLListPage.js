@@ -33,8 +33,8 @@ const AOLListPage = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="aol-list-container">
+      <div className="aol-item-container">
         {aols.map((aol, index) => (
           <AOLItem key={index} aol={aol} />
         ))}
