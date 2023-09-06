@@ -13,7 +13,7 @@ const AOLListPage = () => {
 
   let getAOLs = async () => {
     const token = localStorage.getItem('token');
-    let response = await fetch('/snapshots/api/v1/aols', {
+    let response = await fetch('https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/aols', {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`, // Include the token in the header

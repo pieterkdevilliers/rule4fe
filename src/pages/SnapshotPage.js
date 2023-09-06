@@ -14,7 +14,7 @@ const SnapshotPage = () => {
   }, [snapshotId])
 
   let getSnapshot = async () => {
-      let response = await fetch(`/snapshots/api/v1/snapshots/${snapshotId}`)
+      let response = await fetch(`https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/snapshots/${snapshotId}`)
       let data = await response.json();
       setSnapshot(data);
   }

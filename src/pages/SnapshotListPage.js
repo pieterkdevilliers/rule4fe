@@ -13,7 +13,7 @@ const SnapshotListPage = () => {
 
     let getSnapshots = async () => {
       const token = localStorage.getItem('token');
-        let response = await fetch('/snapshots/api/v1/snapshots', {
+        let response = await fetch('https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/snapshots', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`, // Include the token in the header

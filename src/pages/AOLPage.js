@@ -13,7 +13,7 @@ const AOLPage = () => {
     }, [aolId])
 
     let getAol = async () => {
-        let response = await fetch(`/snapshots/api/v1/aols/${aolId}`)
+        let response = await fetch(`https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/aols/${aolId}`)
         let data = await response.json();
         setAol(data);
     }
