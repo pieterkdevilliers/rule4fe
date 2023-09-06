@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Registration = () => {
+    const navigate = useNavigate();
+    
     const [formData, setFormData] = useState({
         username: '',
         email: '',
-        password1: '',
-        password2: '',
+        password1: '',  // Use 'password1' field name
+        password2: '',  // Use 'password2' field name
     });
 
     const handleChange = (e) => {
@@ -16,7 +20,7 @@ const Registration = () => {
     };
 
     const handleRegistration = () => {
-        fetch('/snapshots/api/v1/register/', {
+        fetch('/snapshots/api/v1/user-register/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,8 +34,9 @@ const Registration = () => {
             throw new Error('Registration failed');
         })
         .then((data) => {
-            console.log(data.message);
             // Handle success, e.g., redirect to login page
+            // Redirect to the login page after successful registration
+            navigate('/login'); // Use history.push to navigate to the login page
         })
         .catch((error) => {
             console.error(error.message);
@@ -56,13 +61,13 @@ const Registration = () => {
             />
             <input
                 type="password"
-                name="password1"
+                name="password1"  // Use 'password1' field name
                 placeholder="Password"
                 onChange={handleChange}
             />
             <input
                 type="password"
-                name="password2"
+                name="password2"  // Use 'password2' field name
                 placeholder="Confirm Password"
                 onChange={handleChange}
             />

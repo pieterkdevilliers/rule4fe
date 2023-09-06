@@ -12,7 +12,13 @@ const AOLListPage = () => {
   }, []);
 
   let getAOLs = async () => {
-    let response = await fetch('/snapshots/api/v1/aols');
+    const token = localStorage.getItem('token');
+    let response = await fetch('https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/aols', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`, // Include the token in the header
+      },});
+
     let data = await response.json();
     setAOLs(data);
   };
@@ -27,8 +33,8 @@ const AOLListPage = () => {
   };
 
   return (
-    <div>
-      <div className="aols">
+    <div className="aol-list-container">
+      <div className="aol-item-container">
         {aols.map((aol, index) => (
           <AOLItem key={index} aol={aol} />
         ))}
