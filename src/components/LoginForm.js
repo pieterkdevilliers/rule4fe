@@ -17,7 +17,7 @@ const Login = () => {
 
     const handleLogin = () => {
         // Step 1: Login Request
-        fetch('/snapshots/api/v1/token/', {
+        fetch('https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/token/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ const Login = () => {
         .then((response) => {
             if (response.ok) {
                 // Step 2: Token Request
-                return fetch('/snapshots/api/v1/token/', {
+                return fetch('https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/token/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

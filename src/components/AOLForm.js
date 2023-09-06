@@ -12,7 +12,7 @@ const AOLForm = ({ onAddAOL }) => {
     const newAOL = { name, description };
 
     try {
-      const response = await fetch('/snapshots/api/v1/aols', {
+      const response = await fetch('https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/aols', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

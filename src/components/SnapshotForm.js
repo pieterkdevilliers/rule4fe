@@ -14,7 +14,7 @@ const SnapshotForm = ({ onAddSnapshot, todayId }) => {
     };
 
     try {
-      const response = await fetch('/snapshots/api/v1/snapshots', {
+      const response = await fetch('https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/snapshots', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

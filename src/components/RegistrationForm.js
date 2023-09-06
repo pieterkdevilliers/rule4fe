@@ -20,7 +20,7 @@ const Registration = () => {
     };
 
     const handleRegistration = () => {
-        fetch('/snapshots/api/v1/user-register/', {
+        fetch('https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/user-register/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
