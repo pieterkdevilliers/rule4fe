@@ -37,13 +37,16 @@ const SnapshotForm = ({ onAddSnapshot, todayId }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Snapshot Content:</label>
-      <div>
-        <textarea value={body} onChange={(e) => setBody(e.target.value)} />
+    <form class="row gy-2 gx-3 align-items-center" onSubmit={handleSubmit}>
+      <div class="m-3">
+        <div class="col-sm-3 mb-3">
+          <label class="form-label">Snapshot Content:</label>
+          <textarea class="form-control" value={body} onChange={(e) => setBody(e.target.value)} />
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-outline-success" type="submit">Create Snapshot</button>
+        </div>
       </div>
-      <br />
-      <button type="submit">Create Snapshot</button>
     </form>
   );
 };

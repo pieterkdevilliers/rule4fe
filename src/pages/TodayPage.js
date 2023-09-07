@@ -44,12 +44,12 @@ const TodayPage = () => {
   };
 
   return (
-    <div>
-      <div className='today-aol-list-container'>
+    <div class="m-3">
+      <div>
         <div>
           {aol ? (
             <>
-            <div className='today-aol-item-container'>
+            <div>
               <div>
                 <div>
                 <h3>{aol.name}</h3>
@@ -79,7 +79,7 @@ const TodayPage = () => {
           <p>Loading...</p>
         )}
       </div>
-      <button onClick={handleAddSnapshot}>Add Snapshot</button>
+        <button class="btn btn-outline-success" onClick={handleAddSnapshot}>Add Snapshot</button>
     </div>
   );
 };

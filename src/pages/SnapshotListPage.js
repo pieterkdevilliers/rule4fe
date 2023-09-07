@@ -23,14 +23,15 @@ const SnapshotListPage = () => {
     }
 
   return (
-    <div className='snapshot-list-container'>
-      <div className="snapshot-item-container">
+    <div className="d-flex">
+      <div>
         {snapshots.map((snapshot, index) => (
             <SnapshotItem key={index} snapshot={snapshot} />
         ))}
       </div>
       <AddSnapshotButton />
     </div>
+    
   )
 }
 

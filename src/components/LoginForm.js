@@ -59,21 +59,33 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div class="row gy-2 gx-3 align-items-center">
+        <div class="m-3">
+            <div class="col-auto mb-3">
             <h2>Login</h2>
+            </div>
+            <div class="col-sm-3 mb-3">
             <input
+                class="form-control"
                 type="text"
                 name="username"
                 placeholder="Username"
                 onChange={handleChange}
             />
+            </div>
+            <div class="col-sm-3 mb-3">
             <input
+                class="form-control"
                 type="password"
                 name="password"
                 placeholder="Password"
                 onChange={handleChange}
             />
-            <button onClick={handleLogin}>Login</button>
+            </div>
+            <div class="col-auto mb-3">
+            <button class="btn btn-outline-success" onClick={handleLogin}>Login</button>
+            </div>
+        </div>
         </div>
     );
 };

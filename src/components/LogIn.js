@@ -9,7 +9,7 @@ const LoginButton = () => {
 
     return (
         <div>
-            <button onClick={handleLogInButton}>Login</button>
+            <button class="btn btn-outline-success" onClick={handleLogInButton}>Login</button>
         </div>
     );
 };

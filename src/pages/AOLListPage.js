@@ -33,8 +33,8 @@ const AOLListPage = () => {
   };
 
   return (
-    <div className="aol-list-container">
-      <div className="aol-item-container">
+    <div>
+      <div className="d-flex justify-content-evenly">
         {aols.map((aol, index) => (
           <AOLItem key={index} aol={aol} />
         ))}
@@ -42,6 +42,7 @@ const AOLListPage = () => {
       <AddAOLButton onClick={toggleFormVisibility} />
       {isFormVisible && <AOLForm onAddAOL={handleAddAOL} />}
     </div>
+    
   );
 };
 

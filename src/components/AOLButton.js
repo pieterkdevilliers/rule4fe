@@ -9,7 +9,7 @@ const AOLButton = () => {
 
     return (
         <div>
-            <button onClick={handleAOLButton}>View AOLs</button>
+            <button class="btn btn-outline-secondary" onClick={handleAOLButton}>View AOLs</button>
         </div>
     );
 };
