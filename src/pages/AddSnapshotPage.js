@@ -14,7 +14,7 @@ const AddSnapshotPage = () => {
     }, []);
 
   return (
-    <div>
+    <div class="m-3">
       <h3> Add New Snapshot </h3>
       <SnapshotForm onAddSnapshot={handleAddSnapshot} todayId={todayId} /> {/* Pass todayId as a prop */}
     </div>

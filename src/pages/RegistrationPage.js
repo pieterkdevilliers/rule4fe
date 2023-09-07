@@ -6,7 +6,6 @@ const RegistrationPage = () => {
 
   return (
     <div>
-      <h3> Registration </h3>
       <RegistrationForm />
     </div>
   )

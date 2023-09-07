@@ -45,33 +45,51 @@ const Registration = () => {
     };
 
     return (
-        <div>
-            <h2>Registration</h2>
-            <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                onChange={handleChange}
-            />
-            <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                onChange={handleChange}
-            />
-            <input
-                type="password"
-                name="password1"  // Use 'password1' field name
-                placeholder="Password"
-                onChange={handleChange}
-            />
-            <input
-                type="password"
-                name="password2"  // Use 'password2' field name
-                placeholder="Confirm Password"
-                onChange={handleChange}
-            />
-            <button onClick={handleRegistration}>Register</button>
+        <div class="row gy-2 gx-3 align-items-center">
+            <div class="m-3">
+                <div class="col-auto mb-3">
+                    <h2>Registration</h2>
+                </div>
+                <div class="col-sm-3 mb-3">
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        onChange={handleChange}
+                    />
+                </div>
+                <div class="col-sm-3 mb-3">
+                    <input
+                        class="form-control"
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        onChange={handleChange}
+                    />
+                </div>
+                <div class="col-sm-3 mb-3">
+                    <input
+                        class="form-control"
+                        type="password"
+                        name="password1"  // Use 'password1' field name
+                        placeholder="Password"
+                        onChange={handleChange}
+                    />
+                </div>
+                <div class="col-sm-3 mb-3">
+                    <input
+                        class="form-control"
+                        type="password"
+                        name="password2"  // Use 'password2' field name
+                        placeholder="Confirm Password"
+                        onChange={handleChange}
+                    />
+                </div>
+                <div>
+                    <button class="btn btn-outline-success" onClick={handleRegistration}>Register</button>
+                </div>
+            </div>
         </div>
     );
 };

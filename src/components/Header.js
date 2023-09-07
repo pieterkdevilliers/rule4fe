@@ -5,7 +5,11 @@ import AOLButton from './AOLButton';
 
 const header = () => {
   return (
-      <div className="button-container">
+      <div class="navbar navbar-expand-lg bg-body-tertiary d-flex mb-3">
+        <div class="navbar-brand">
+          <h1 class="display-4">Rule4</h1>
+        </div>
+        <div class="d-flex justify-content-end grid gap-3">
         <div>
           <LoginButton />
         </div>
@@ -14,6 +18,7 @@ const header = () => {
         </div>
         <div>
           <AOLButton />
+        </div>
         </div>
       </div>
   );

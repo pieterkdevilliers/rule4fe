@@ -6,7 +6,6 @@ const LoginPage = () => {
 
   return (
     <div>
-      <h3> Login </h3>
       <LoginFrom />
     </div>
   )

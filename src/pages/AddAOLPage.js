@@ -11,7 +11,6 @@ const AddAOLPage = () => {
 
   return (
     <div>
-      <h3> Login </h3>
       <AOLForm onAddAOL={handleAddAOL}/>
     </div>
   )

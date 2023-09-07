@@ -36,18 +36,24 @@ const AOLForm = ({ onAddAOL }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Description:
-        <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
-      </label>
-      <br />
-      <button type="submit">Create AOL</button>
+    <form class="row gy-2 gx-3 align-items-center" onSubmit={handleSubmit}>
+      <div class="m-3">
+      <div class="col-auto">
+        <label class="form-label">
+          Name:
+          <input type="text" class="form-control"  value={name} onChange={(e) => setName(e.target.value)} />
+        </label>
+      </div>
+      <div class="col-auto">
+        <label class="form-label">
+          Description:
+          <textarea class="form-control"  value={description} onChange={(e) => setDescription(e.target.value)} />
+        </label>
+      </div>
+      <div class="col-auto">
+      <button type="submit" class="btn btn-outline-success">Create AOL</button>
+      </div>
+      </div>
     </form>
   );
 };
